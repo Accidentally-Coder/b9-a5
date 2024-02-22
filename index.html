@@ -345,7 +345,6 @@
                     <div class="btn bg-[#1DD100] text-white w-full" onclick="purchaseModal.showModal()">Next</div>
                     <!-- next modal -->
                     <!-- Open the modal using ID.showModal() method -->
-                    <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
                     <dialog id="purchaseModal" class="modal modal-bottom sm:modal-middle">
                         <div class="modal-box">
                             <div class="flex justify-center">
@@ -366,6 +365,23 @@
                                         class="btn bg-[#20AE5C] text-white w-[300px] h-14 rounded-3xl">Continue</button>
                                 </form>
                             </div>
+                        </div>
+                    </dialog>
+
+                    <!-- more than 4 seat selected modal -->
+                    <!-- You can open the modal using ID.showModal() method -->
+                    <!-- <button class="btn" onclick="my_modal_3.showModal()">open modal</button> -->
+                    <dialog id="moreSeatModal" class="modal">
+                        <div class="modal-box">
+                            <form method="dialog">
+                                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                            </form>
+                            <div class="flex justify-center">
+                                <img src="./images/cross.jpg" alt="" width="100px" height="100px">
+                            </div>
+                            <h3 class="font-bold text-lg flex justify-center">Sorry! You cannot select more than 4
+                                seats.</h3>
+                            <p class="py-4 text-sm">Press ESC key or click on ✕ button to close</p>
                         </div>
                     </dialog>
                 </div>
