@@ -3,31 +3,35 @@ const noTotalSeat = 8
 let totalPrice = 0;
 let grandTotalPrice = 0;
 let selectedSeatArray = new Array();
+// const phoneElement = document.getElementById("phone");
+
+// // Add an event listener for the input event on the phone element
+// phoneElement.addEventListener("input", onSelectionChange);
 
 function selectedSeat(seatId) {
-    console.log('pressed ', seatId);
     // if more than 4 seats selected
     if (noSeatSelected >= 4) {
-        console.log("You cannot select more than 4");
+        // check if already selected
+        if (selectedSeatArray.includes(seatId)) {
+            return;
+        }
         moreSeatModal.showModal();
     } else {
         // checking if selected seat is already included or not
         if (selectedSeatArray.includes(seatId)) {
-            console.log('Already added');
             return;
         }
 
         const seatSelected = document.getElementById(seatId);
         // add to array
         selectedSeatArray.push(seatId);
-        console.log(selectedSeatArray);
         // changing button color to green
         seatSelected.classList.add('bg-[#1DD100]')
         seatSelected.classList.replace('text-gray-400', 'text-white');
-        console.log(seatSelected.classList);
 
         // maths
         noSeatSelected = noSeatSelected + 1;
+
         if (noSeatSelected == 4) {
             applyCouponButtonElement = document.getElementById("apply-btn");
             applyCouponButtonElement.classList.replace('btn-disabled', 'btn-enabled');
@@ -35,7 +39,6 @@ function selectedSeat(seatId) {
         totalPrice = totalPrice + 550;
         grandTotalPrice = grandTotalPrice + 550;
 
-        console.log(noSeatSelected);
         // changing "n Seats Left" text
         seatLeftId = document.getElementById("seatLeftId");
         seatLeftId.innerHTML = (noTotalSeat - noSeatSelected) + " Seats Left";
@@ -66,10 +69,8 @@ function selectedSeat(seatId) {
 }
 
 function applyCoupon() {
-    console.log('Applied coupon');
     const couponElement = document.getElementById("coupon-field");
     const couponValue = couponElement.value;
-    console.log(couponValue);
     if (couponValue === "NEW15") {
         let discountPrice = 0.15 * totalPrice;
         grandTotalPrice -= discountPrice;

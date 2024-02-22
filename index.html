@@ -348,8 +348,34 @@
                         </table>
 
                     </div>
-                    <div class="hidden">form section</div>
-                    <div class="btn bg-[#1DD100] text-white w-full" onclick="purchaseModal.showModal()">Next</div>
+                    <div class="py-4">
+                        <form>
+                            <div class="flex flex-col">
+                                <label for="name">
+                                    <h4 class="font-bold"> Passenger Name* </h4>
+                                </label>
+                                <input type="text" name="name" id="name" placeholder="Enter your name"
+                                    class="w-[350px] h-16 rounded-xl border-2 border-gray-200 p-4">
+                            </div>
+                            <div class="flex flex-col">
+                                <label for="phone">
+                                    <h4 class="font-bold"> Phone Number*</h4>
+                                </label>
+                                <input type="text" name="phone" id="phone" placeholder="Enter your phone number"
+                                    class="w-[350px] h-16 rounded-xl border-2 border-gray-200 p-4">
+                            </div>
+                            <div class="flex flex-col">
+                                <label for="email">
+                                    <h4 class="font-bold">Email ID</h4>
+                                </label>
+                                <input type="text" name="email" id="email" placeholder="Enter your email id"
+                                    class="w-[350px] h-16 rounded-xl border-2 border-gray-200 p-4">
+                            </div>
+                        </form>
+                    </div>
+                    <div id="next-button" class="btn bg-[#1DD100] text-white w-full"
+                        onclick="purchaseModal.showModal()">
+                        Next</div>
                     <!-- next modal -->
                     <!-- Open the modal using ID.showModal() method -->
                     <dialog id="purchaseModal" class="modal modal-bottom sm:modal-middle">
