@@ -342,7 +342,32 @@
 
                     </div>
                     <div class="hidden">form section</div>
-                    <div class="btn bg-[#1DD100] text-white w-full">Next</div>
+                    <div class="btn bg-[#1DD100] text-white w-full" onclick="purchaseModal.showModal()">Next</div>
+                    <!-- next modal -->
+                    <!-- Open the modal using ID.showModal() method -->
+                    <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+                    <dialog id="purchaseModal" class="modal modal-bottom sm:modal-middle">
+                        <div class="modal-box">
+                            <div class="flex justify-center">
+                                <img src="./images/success.png" alt="" width="100px" height="100px">
+                            </div>
+                            <h1 class="py-4 text-[#20AE5C] flex justify-center font-bold text-2xl">SUCCESS</h1>
+                            <p class="text-gray-700 font-bold text-xl text-center">
+                                Thank you for Booking Our Bus Seats.<br>
+                                We are working hard to find the best service and deals for you.
+                            </p>
+                            <p class="text-gray-400 font-base font-normal text-center">
+                                Shortly you will find a confirmation in your email.
+                            </p>
+                            <div class="modal-action flex justify-center">
+                                <form method="dialog">
+                                    <!-- if there is a button in form, it will close the modal -->
+                                    <button
+                                        class="btn bg-[#20AE5C] text-white w-[300px] h-14 rounded-3xl">Continue</button>
+                                </form>
+                            </div>
+                        </div>
+                    </dialog>
                 </div>
             </div>
         </section>
