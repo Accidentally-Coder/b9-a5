@@ -2,6 +2,7 @@ let noSeatSelected = 0;
 const noTotalSeat = 8
 let totalPrice = 0;
 let grandTotalPrice = 0;
+let selectedSeatArray = new Array();
 
 function selectedSeat(seatId) {
     console.log('pressed ', seatId);
@@ -10,20 +11,31 @@ function selectedSeat(seatId) {
         console.log("You cannot select more than 4");
         moreSeatModal.showModal();
     } else {
-        noSeatSelected = noSeatSelected + 1;
+        // checking if selected seat is already included or not
+        if (selectedSeatArray.includes(seatId)) {
+            console.log('Already added');
+            return;
+        }
 
+        const seatSelected = document.getElementById(seatId);
+        // add to array
+        selectedSeatArray.push(seatId);
+        console.log(selectedSeatArray);
+        // changing button color to green
+        seatSelected.classList.add('bg-[#1DD100]')
+        seatSelected.classList.replace('text-gray-400', 'text-white');
+        console.log(seatSelected.classList);
+
+        // maths
+        noSeatSelected = noSeatSelected + 1;
         totalPrice = totalPrice + 550;
         grandTotalPrice = grandTotalPrice + 550;
 
         console.log(noSeatSelected);
-        // changinn "n Seats Left" text
+        // changing "n Seats Left" text
         seatLeftId = document.getElementById("seatLeftId");
         seatLeftId.innerHTML = (noTotalSeat - noSeatSelected) + " Seats Left";
-        // changing button color to green
-        const seatSelected = document.getElementById(seatId);
-        seatSelected.classList.add('bg-[#1DD100]')
-        seatSelected.classList.replace('text-gray-400', 'text-white');
-        console.log(seatSelected.classList);
+
         // changing table "selected-seat-id" number
         const tableBubble = document.getElementById("selected-seat-id");
         tableBubble.innerHTML = noSeatSelected;
@@ -45,6 +57,7 @@ function selectedSeat(seatId) {
         cell1.innerHTML = seatName;
         cell2.innerHTML = "Economy";
         cell3.innerHTML = "550";
+
     }
 }
 
