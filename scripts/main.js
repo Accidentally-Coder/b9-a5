@@ -28,6 +28,10 @@ function selectedSeat(seatId) {
 
         // maths
         noSeatSelected = noSeatSelected + 1;
+        if (noSeatSelected == 4) {
+            applyCouponButtonElement = document.getElementById("apply-btn");
+            applyCouponButtonElement.classList.replace('btn-disabled', 'btn-enabled');
+        }
         totalPrice = totalPrice + 550;
         grandTotalPrice = grandTotalPrice + 550;
 
