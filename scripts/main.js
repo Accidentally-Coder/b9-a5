@@ -31,6 +31,10 @@ function selectedSeat(seatId) {
 
         // maths
         noSeatSelected = noSeatSelected + 1;
+        if (noSeatSelected > 0) {
+            nextButtonElement = document.getElementById("next-button");
+            nextButtonElement.classList.replace('btn-disabled', 'btn-enabled');
+        }
 
         if (noSeatSelected == 4) {
             applyCouponButtonElement = document.getElementById("apply-btn");
