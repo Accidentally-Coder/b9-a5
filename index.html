@@ -322,16 +322,20 @@
                             </tbody>
                         </table>
                         <div class="border-b-2"></div>
-                        <table>
-                            <tr>
-                                <th>Total Price</th>
-                                <th id="total-price">0</th>
-                            </tr>
+                        <table id="coupon-table">
+                            <thead>
+                                <tr class="price-heading">
+                                    <th>Total Price</th>
+                                    <th id="total-price">0</th>
+                                </tr>
+                            </thead>
+                            <tbody class="font-bold"></tbody>
                         </table>
                         <div class="bg-white w-[310px] h-14 rounded-xl inline-flex">
                             <input type="text" name="coupon" id="coupon-field" placeholder="Have any coupon?"
                                 class="rounded-lg pl-2">
-                            <div class="btn bg-[#1DD100] text-white mt-1 h-10 w-20">Apply</div>
+                            <div id="apply-btn" class="btn bg-[#1DD100] text-white mt-1 h-10 w-20"
+                                onclick="applyCoupon()">Apply</div>
                         </div>
                         <table>
                             <tr>

@@ -46,5 +46,33 @@ function selectedSeat(seatId) {
         cell2.innerHTML = "Economy";
         cell3.innerHTML = "550";
     }
+}
+
+function applyCoupon() {
+    console.log('Applied coupon');
+    const couponElement = document.getElementById("coupon-field");
+    const couponValue = couponElement.value;
+    console.log(couponValue);
+    if (couponValue === "NEW15") {
+        let discountPrice = 0.15 * totalPrice;
+        grandTotalPrice -= discountPrice;
+        // appending new row
+        var tableBody = document.getElementById("coupon-table").getElementsByTagName("tbody")[0];
+        var newRow = tableBody.insertRow(tableBody.rows.length);
+
+        var cell1 = newRow.insertCell(0);
+        var cell2 = newRow.insertCell(1);
+
+        cell1.innerHTML = "Discount Price";
+        cell2.innerHTML = "" + discountPrice;
+        // updating grand Total
+        const grandTotalElement = document.getElementById("grand-total");
+        grandTotalElement.innerHTML = grandTotalPrice;
+
+    } else if (couponValue === "Couple 20") {
+
+    } else {
+        console.log('wrong coupon');
+    }
 
 }
