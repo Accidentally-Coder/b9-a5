@@ -13,5 +13,7 @@ function selectedSeat(seatId) {
     seatSelected.classList.add('bg-[#1DD100]')
     seatSelected.classList.replace('text-gray-400', 'text-white');
     console.log(seatSelected.classList);
-
+    // changing table "selected-seat-id" number
+    const tableBubble = document.getElementById("selected-seat-id");
+    tableBubble.innerHTML = noSeatSelected;
 }
