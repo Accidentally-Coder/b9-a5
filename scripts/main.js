@@ -32,5 +32,17 @@ function selectedSeat(seatId) {
     // increase grand total "grand-total"
     const grandTotalElement = document.getElementById("grand-total");
     grandTotalElement.innerHTML = grandTotalPrice;
+    // appending new row
+    seatName = seatSelected.innerHTML;
+    var tableBody = document.getElementById("price-table").getElementsByTagName("tbody")[0];
+    var newRow = tableBody.insertRow(tableBody.rows.length);
+
+    var cell1 = newRow.insertCell(0);
+    var cell2 = newRow.insertCell(1);
+    var cell3 = newRow.insertCell(2);
+
+    cell1.innerHTML = seatName;
+    cell2.innerHTML = "Economy";
+    cell3.innerHTML = "550";
 
 }
