@@ -31,6 +31,17 @@
         .inter {
             font-family: "Inter", sans-serif;
         }
+
+        th,
+        td {
+            width: 200px;
+            text-align: center;
+            padding: 12px;
+        }
+
+        .seat-heading {
+            border-bottom: 1px dashed gray;
+        }
     </style>
 </head>
 
@@ -150,7 +161,7 @@
                     for securing your travel reservations today.</p>
             </div>
             <!-- ticket info section -->
-            <div class="bg-white w-[1200px] h-[450px] my-8 rounded-3xl flex text-center">
+            <div class="bg-white w-[1250px] h-[450px] my-8 rounded-3xl flex text-center">
                 <!-- route and seat number part -->
                 <div class="w-[800px] p-10 space-y-5">
                     <!-- bus name  -->
@@ -168,7 +179,9 @@
                         <div>
                             <a class="btn bg-green-100 text-[#1DD100]">
                                 <img src="./images/seat-green.png" alt="">
-                                40 Seats left
+                                <div id="seatLeftId">
+                                    8 Seats left
+                                </div>
                             </a>
                         </div>
                     </div>
@@ -200,11 +213,11 @@
                 </div>
             </div>
             <!-- seat list and booking -->
-            <div class="bg-white w-[1200px] h-[1050px] rounded-3xl flex justify-between p-8">
-                <div>
+            <div class="bg-white w-[1250px] h-[1050px] rounded-3xl flex justify-between p-8">
+                <div class="px-4">
                     <div class="text-2xl font-bold">Select Your Seat</div>
                     <div class="pt-6 border-b-2 border-dashed border-gray-300 w-[750px]"></div>
-                    <div class="pt-3 flex gap-[550px]">
+                    <div class="pt-3 flex gap-[540px]">
                         <div class="text-gray-500 font-medium flex gap-2">
                             <img src="./images/seat-gray.png" alt="">
                             Available
@@ -233,18 +246,26 @@
                             <div class="flex gap-52">
                                 <div class="flex gap-8">
                                     <div>
-                                        <div class="btn text-gray-400 font-normal w-28 h-14">A1</div>
+                                        <div class="btn text-gray-400 font-normal w-28 h-14" id="A1"
+                                            onclick="selectedSeat(this.id)">A1
+                                        </div>
                                     </div>
                                     <div>
-                                        <div class="btn text-gray-400 font-normal w-28 h-14">A1</div>
+                                        <div class="btn text-gray-400 font-normal w-28 h-14" id="A2"
+                                            onclick="selectedSeat(this.id)">A2
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="flex gap-8">
                                     <div>
-                                        <div class="btn text-gray-400 font-normal w-28 h-14">A1</div>
+                                        <div class="btn text-gray-400 font-normal w-28 h-14" id="A3"
+                                            onclick="selectedSeat(this.id)">A3
+                                        </div>
                                     </div>
                                     <div>
-                                        <div class="btn text-gray-400 font-normal w-28 h-14">A1</div>
+                                        <div class="btn text-gray-400 font-normal w-28 h-14" id="A4"
+                                            onclick="selectedSeat(this.id)">A4
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -254,26 +275,74 @@
                             <div class="flex gap-52">
                                 <div class="flex gap-8">
                                     <div>
-                                        <div class="btn text-gray-400 font-normal w-28 h-14">B1</div>
+                                        <div class="btn text-gray-400 font-normal w-28 h-14" id="B1"
+                                            onclick="selectedSeat(this.id)">B1
+                                        </div>
                                     </div>
                                     <div>
-                                        <div class="btn text-gray-400 font-normal w-28 h-14">B2</div>
+                                        <div class="btn text-gray-400 font-normal w-28 h-14" id="B2"
+                                            onclick="selectedSeat(this.id)">B2
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="flex gap-8">
                                     <div>
-                                        <div class="btn text-gray-400 font-normal w-28 h-14">B3</div>
+                                        <div class="btn text-gray-400 font-normal w-28 h-14" id="B3"
+                                            onclick="selectedSeat(this.id)">B3
+                                        </div>
                                     </div>
                                     <div>
-                                        <div class="btn text-gray-400 font-normal w-28 h-14">B4</div>
+                                        <div class="btn text-gray-400 font-normal w-28 h-14" id="B4"
+                                            onclick="selectedSeat(this.id)">B4
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="border-l-2 border-dashed border-gray-300 my-6"></div>
-                <div>right</div>
+                <div class="border-r-2 border-gray-300 border-dashed"></div>
+                <div class="w-[400px] px-4">
+                    <div class="text-2xl font-bold">Select Your Seat</div>
+                    <div class="pt-6 border-b-2 border-dashed border-gray-300"></div>
+                    <!-- right section -->
+                    <div class="bg-gray-100 p-6 my-4 rounded-xl">
+                        <!-- coupon table -->
+                        <table>
+                            <tr class="seat-heading">
+                                <th>Seat <span class="bg-[#1DD100] text-white rounded-full text-sm p-2">0</span> </th>
+                                <th>Class</th>
+                                <th>Price</th>
+                            </tr>
+                            <tr class="text-gray-400">
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                            </tr>
+                        </table>
+                        <div class="border-b-2"></div>
+                        <table>
+                            <tr>
+                                <th>Total Price</th>
+                                <th>1500</th>
+                            </tr>
+                        </table>
+                        <div class="bg-white w-[310px] h-14 rounded-xl inline-flex">
+                            <input type="text" name="coupon" id="coupon-field" placeholder="Have any coupon?"
+                                class="rounded-lg pl-2">
+                            <div class="btn bg-[#1DD100] text-white mt-1 h-10 w-20">Apply</div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Grand Total</th>
+                                <th>1500</th>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div class="hidden">form section</div>
+                    <div class="btn bg-[#1DD100] text-white w-full">Next</div>
+                </div>
             </div>
         </section>
     </main>
@@ -312,6 +381,8 @@
             </div>
         </div>
     </footer>
+    <!-- linking js file -->
+    <script src="./scripts/main.js"></script>
 </body>
 
 </html>
