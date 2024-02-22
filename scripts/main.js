@@ -69,10 +69,32 @@ function applyCoupon() {
         const grandTotalElement = document.getElementById("grand-total");
         grandTotalElement.innerHTML = grandTotalPrice;
 
+        // hiding coupon-section
+        const couponSectionElement = document.getElementById("coupon-section");
+        couponSectionElement.classList.add('hidden');
+
     } else if (couponValue === "Couple 20") {
+        let discountPrice = 0.20 * totalPrice;
+        grandTotalPrice -= discountPrice;
+        // appending new row
+        var tableBody = document.getElementById("coupon-table").getElementsByTagName("tbody")[0];
+        var newRow = tableBody.insertRow(tableBody.rows.length);
+
+        var cell1 = newRow.insertCell(0);
+        var cell2 = newRow.insertCell(1);
+
+        cell1.innerHTML = "Discount Price";
+        cell2.innerHTML = "" + discountPrice;
+        // updating grand Total
+        const grandTotalElement = document.getElementById("grand-total");
+        grandTotalElement.innerHTML = grandTotalPrice;
+
+        // hiding coupon-section
+        const couponSectionElement = document.getElementById("coupon-section");
+        couponSectionElement.classList.add('hidden');
 
     } else {
-        console.log('wrong coupon');
+        invalidCouponModal.showModal();
     }
 
 }

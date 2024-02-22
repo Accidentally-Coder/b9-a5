@@ -331,7 +331,7 @@
                             </thead>
                             <tbody class="font-bold"></tbody>
                         </table>
-                        <div class="bg-white w-[310px] h-14 rounded-xl inline-flex">
+                        <div id="coupon-section" class="bg-white w-[310px] h-14 rounded-xl inline-flex">
                             <input type="text" name="coupon" id="coupon-field" placeholder="Have any coupon?"
                                 class="rounded-lg pl-2">
                             <div id="apply-btn" class="btn bg-[#1DD100] text-white mt-1 h-10 w-20"
@@ -385,6 +385,19 @@
                             </div>
                             <h3 class="font-bold text-lg flex justify-center">Sorry! You cannot select more than 4
                                 seats.</h3>
+                            <p class="py-4 text-sm">Press ESC key or click on ✕ button to close</p>
+                        </div>
+                    </dialog>
+                    <!-- invalid coupon modal -->
+                    <dialog id="invalidCouponModal" class="modal">
+                        <div class="modal-box">
+                            <form method="dialog">
+                                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                            </form>
+                            <div class="flex justify-center">
+                                <img src="./images/cross.jpg" alt="" width="100px" height="100px">
+                            </div>
+                            <h3 class="font-bold text-lg flex justify-center">Sorry! You have entered wrong coupon.</h3>
                             <p class="py-4 text-sm">Press ESC key or click on ✕ button to close</p>
                         </div>
                     </dialog>
